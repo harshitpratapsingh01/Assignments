@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = prompt("Enter a number: ");
+
+        let arr = [];
+
+        for(let i = 0; i<n; i++){
+            arr[i] = parseInt(prompt("Enter the elements of array: "));
+        }
+
+        document.write(arr);
+        document.write("<br>");
+
+        let double_of_arrayEle = (item) => {
+            return item*2;
+        };
+        let mapped_arr = arr.map(double_of_arrayEle);
+
+        document.write(mapped_arr);
+        document.write("<br>");
+
+        let greaterThen = (num) => {
+            return num>=5;
+        };
+
+        let filtered_arr = mapped_arr.filter(greaterThen);
+        document.write(filtered_arr);
+        document.write("<br>");
+
+        
+        let sorted_arr = filtered_arr.sort(function(a,b){
+            return a-b;
+        });
+        document.write(sorted_arr);
+        document.write("<br>");
+
+        let sum = (total,num) => {
+            return total+num;
+        };
+
+        let sumOfSortedArr = sorted_arr.reduce(sum,0);
+        document.write(sumOfSortedArr);
+
+        
+
+    </script>
+</body>
+</html>

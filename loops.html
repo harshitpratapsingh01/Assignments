@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ***********************************************For Loop******************************************
+        const n = prompt("Enter a number:");
+        for(let i = 0; i<n; i++){
+            for(let j = 0; j<2*i; j++){
+                document.write("&ensp;");
+            }
+
+            for(let k = 0; k<n; k++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+
+
+        // ***********************************************While Loop**************************************
+        let i = 0;
+        while(i<n){
+            let j = 0;
+            while(j<2*i){
+                document.write("&ensp;");
+                j++;
+            }
+
+            let k = 0;
+            while(k<n){
+                document.write("*");
+                k++;
+            }
+            document.write("<br>");
+            i++;
+        }
+
+
+        // **************************************Do While Loop**************************************
+        var a = 0;
+        do{
+            var b = 0;
+            if(a>0){
+                do{
+                    document.write("&ensp;");
+                    b++;
+                }while(b<2*a)
+            }
+            var c = 0;
+            while(c<n){
+                document.write("*");
+                c++;
+            }
+            document.write("<br>");
+            a++;
+        }while(a<n)
+
+
+        // *****************************************ForEachLoop************************************
+        var arr = [1,2,3,4,5];
+        var arr1 = [];
+
+        arr.forEach(copy);
+
+        function copy(item){
+            arr1.push(item);
+        }
+
+        alert(arr1);
+
+
+    </script>
+
+
+    
+</body>
+</html>
