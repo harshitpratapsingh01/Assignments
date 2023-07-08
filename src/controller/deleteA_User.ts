@@ -6,7 +6,8 @@ const deleteUserData = (id,req,res) => {
 
     if(!person){
         console.log("error");
-        res.status(401).json({StatusCode: '401',status:"error"});
+        const message = "User Not Found"
+        res.status(404).json({StatusCode: '401',status:message});
     }
     else{
         details.splice(index,1);

@@ -4,8 +4,7 @@ import { details } from "../models/schema";
 import { newUser } from '../controller/addNewUser';
 const router = express.Router();
 
-router.post('/', (req, res) => {
-    console.log(req.body, 'body');
+router.post('/', async(req, res) => {
     const new_data = req.body;
     newUser(new_data, req, res);
 });
