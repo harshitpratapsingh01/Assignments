@@ -3,12 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.patchRouter = void 0;
 const express_1 = __importDefault(require("express"));
-const displayData_1 = require("../controller/displayData");
+const patchlogic_1 = require("../controller/patchlogic");
 const router = express_1.default.Router();
-router.get('/:id', (req, res) => {
+exports.patchRouter = router;
+router.patch('/:id', (req, res) => {
     const id = Number(req.params.id);
-    (0, displayData_1.displayUserData)(id, req, res);
+    const update_data = req.body;
+    (0, patchlogic_1.changeUserData)(update_data, id, req, res);
 });
-exports.default = router;
-//# sourceMappingURL=get.js.map
+//# sourceMappingURL=patch.js.map

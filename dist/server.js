@@ -31,6 +31,8 @@ const dotenv = __importStar(require("dotenv"));
 const get_1 = __importDefault(require("./src/routes/get"));
 const post_1 = require("./src/routes/post");
 const put_1 = require("./src/routes/put");
+const patch_1 = require("./src/routes/patch");
+const delete_1 = require("./src/routes/delete");
 dotenv.config();
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
@@ -39,7 +41,8 @@ const sk = process.env.secret_key;
 app.use('/', get_1.default);
 app.use('/post', post_1.postRouter);
 app.use('/put/', put_1.putRouter);
-// app.all('/', )
+app.use('/patch/', patch_1.patchRouter);
+app.use('/delete', delete_1.deleteUser);
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);
 });

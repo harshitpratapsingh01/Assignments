@@ -1,6 +1,6 @@
 import { details } from "../models/schema";
 
-const updateUserData = (updateData ,id, req, res) => {
+const changeUserData = (updateData ,id, req, res) => {
     const person = details.find((account) => account.id === id);
     const index = details.indexOf(person);
 
@@ -19,4 +19,4 @@ const updateUserData = (updateData ,id, req, res) => {
     }
 }
 
-export {updateUserData};
+export {changeUserData};

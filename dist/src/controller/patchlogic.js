@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateUserData = void 0;
+exports.changeUserData = void 0;
 const schema_1 = require("../models/schema");
-const updateUserData = (updateData, id, req, res) => {
+const changeUserData = (updateData, id, req, res) => {
     const person = schema_1.details.find((account) => account.id === id);
     const index = schema_1.details.indexOf(person);
     console.log(person);
@@ -18,5 +18,5 @@ const updateUserData = (updateData, id, req, res) => {
         res.status(200).json({ statusCode: '200', status: "Successs", details: schema_1.details });
     }
 };
-exports.updateUserData = updateUserData;
-//# sourceMappingURL=updateData.js.map
+exports.changeUserData = changeUserData;
+//# sourceMappingURL=patchlogic.js.map
